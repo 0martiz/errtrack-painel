@@ -1,0 +1,13 @@
+# Configuração para deploy automático no Render (Blueprint).
+# Em render.com -> New -> Blueprint -> selecione este repositório.
+#
+# Esse serviço é um "Web Service" Node que serve os arquivos
+# estáticos via server.js (não precisa de build).
+services:
+  - type: web
+    name: errtrack
+    env: node
+    plan: free
+    buildCommand: ""
+    startCommand: "node server.js"
+    autoDeploy: true
