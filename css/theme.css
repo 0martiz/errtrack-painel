@@ -1,0 +1,102 @@
+/* ============================================================
+   ErrTrack — Theme System
+   Overrides das variáveis para o modo claro (body.light).
+   O modo escuro é o padrão definido em variables.css.
+   ============================================================ */
+
+/* ── Light Mode — variáveis ── */
+body.light {
+  --bg-dark:   #f4f4f6;
+  --bg-mid:    #ececf0;
+  --bg-card:   #ffffff;
+  --bg-card2:  #f9f9fb;
+  --surf:      rgba(255, 255, 255, 0.9);
+  --surf2:     rgba(249, 249, 251, 0.95);
+  --border:    rgba(0, 0, 0, 0.07);
+  --border2:   rgba(139, 92, 246, 0.3);
+  --border3:   rgba(0, 0, 0, 0.1);
+  --tx:        #0f172a;
+  --mt:        #94a3b8;
+  --mt2:       #475569;
+  --primary-glow:   rgba(139, 92, 246, 0.2);
+  --secondary-glow: rgba(59, 130, 246, 0.18);
+
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(139, 92, 246, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(59, 130, 246, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 70%);
+}
+
+/* ── Light Mode — componentes ── */
+body.light .sidebar {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,248,252,0.99) 100%) !important;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.06);
+}
+
+body.light .ni:hover         { background: rgba(139, 92, 246, 0.07); }
+body.light .ni.on            { background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(59,130,246,0.06)); }
+
+body.light .fi,
+body.light .fta,
+body.light .pa               { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.12); color: var(--tx); }
+
+body.light .fi::placeholder,
+body.light .fta::placeholder,
+body.light .pa::placeholder  { color: #94a3b8; }
+
+body.light .fi:focus,
+body.light .fta:focus,
+body.light .pa:focus         { border-color: rgba(139,92,246,0.45); background: rgba(139,92,246,0.03); }
+
+body.light .so               { background: rgba(0,0,0,0.02); border-color: rgba(0,0,0,0.1); color: #475569; }
+body.light .so:hover         { background: rgba(0,0,0,0.04); }
+body.light .es               { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.07); }
+body.light .er               { background: #fff; border-color: rgba(0,0,0,0.08); }
+body.light .er:hover         { background: #faf9ff; border-color: rgba(139,92,246,0.25); }
+body.light .pr               { background: rgba(139,92,246,0.04); border-color: rgba(139,92,246,0.15); }
+body.light .dz               { border-color: rgba(139,92,246,0.2); }
+body.light .dz:hover         { background: rgba(139,92,246,0.04); }
+body.light .toast            { background: rgba(255,255,255,0.97); border-color: rgba(0,0,0,0.1); }
+body.light .sb-note          { background: rgba(139,92,246,0.05); border-color: rgba(139,92,246,0.12); }
+body.light .mobile-menu-btn  { background: #fff; }
+body.light .ssn              { box-shadow: 0 0 10px rgba(139,92,246,0.2); }
+body.light .chart-box        { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+body.light .kpi              { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+body.light .ec               { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+body.light .ec:hover         { box-shadow: 0 8px 30px rgba(0,0,0,0.1), 0 0 20px rgba(139,92,246,0.06); }
+body.light::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.2); }
+
+/* ── Toggle Button ── */
+.theme-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 500;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all .25s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+body:not(.light) .theme-btn {
+  background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(59,130,246,0.3));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  backdrop-filter: blur(12px);
+}
+
+body.light .theme-btn {
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+.theme-btn:hover  { transform: scale(1.1); }
+.theme-btn:active { transform: scale(.95); }
